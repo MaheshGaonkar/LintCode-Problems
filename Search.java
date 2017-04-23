@@ -12,16 +12,10 @@ public class Search {
 	 * @print     ex.getMessage(), If @exception found
 	 */
 	public static int binarySearch(final int[] nums,  final int target) {
-		 int position = -1;
-		try{
-			
-			if(nums == null){
-				throw new NullPointerException();
-			}
-			
-			int start = 0;
+		if(nums == null) return -1;
+		int position = -1;
+		int start = 0;
 	        int end = nums.length - 1;
-	         
 	        while(start <= end ){
 	            int mid = (start + end) / 2;
 	            if(nums[mid] == target){
@@ -40,13 +34,6 @@ public class Search {
 	                position = position - 1;
 	            }
 	        }
-	       // return position;
-		}catch(NullPointerException ex){
-			System.out.println(ex.getMessage());
-		}
-		catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}
-		 return position;
+		return position;
     }
 }
